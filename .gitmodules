@@ -16,3 +16,6 @@
 [submodule ".vim/bundle/ultisnips"]
 	path = .vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule ".vim/bundle/signify"]
+	path = .vim/bundle/signify
+	url = https://github.com/mhinz/vim-signify.git

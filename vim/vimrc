@@ -52,6 +52,8 @@ call pathogen#infect()
 syntax on
 filetype plugin indent on
 
+let g:signify_realtime = 1
+
 set number
 set mouse=a
 set numberwidth=1
