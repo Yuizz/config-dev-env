@@ -54,6 +54,11 @@ filetype plugin indent on
 
 let g:signify_realtime = 1
 
+colorscheme gruvbox
+let g:gruvbox_constrast_dark = 1
+:set bg=dark
+autocmd vimenter * ++nested colorscheme gruvbox
+
 set number
 set mouse=a
 set numberwidth=1
@@ -75,6 +80,7 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
