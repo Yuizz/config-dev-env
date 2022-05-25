@@ -30,14 +30,21 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'neoclide/coc.nvim'
   Plug 'alvan/vim-closetag'
   Plug 'jiangmiao/auto-pairs'
+  Plug 'github/copilot.vim'
+  Plug 'APZelos/blamer.nvim'
 call plug#end()
 
+" Maps
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NvimTreeToggle<CR>
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
 colorscheme gruvbox
 let g:gruvbox_constrast_dark = 1
 let g:gruvbox_transparent_bg = 1
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 set bg=dark
+
+let g:blamer_show_in_insert_modes = 0
