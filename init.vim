@@ -40,6 +40,8 @@ nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NvimTreeToggle<CR>
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
 
 colorscheme gruvbox
 let g:gruvbox_constrast_dark = 1
