@@ -32,6 +32,9 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'jiangmiao/auto-pairs'
   Plug 'github/copilot.vim'
   Plug 'APZelos/blamer.nvim'
+  Plug 'yuezk/vim-js'
+  Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " Maps
