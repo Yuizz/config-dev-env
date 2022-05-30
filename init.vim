@@ -23,7 +23,6 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'mfussenegger/nvim-lint'
   Plug 'vim-airline/vim-airline'
   Plug 'preservim/nerdtree'
-  Plug 'https://github.com/morhetz/gruvbox'
   Plug 'ryanoasis/vim-devicons'
   Plug 'mhinz/vim-signify'
   Plug 'ap/vim-css-color'
@@ -32,21 +31,32 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'jiangmiao/auto-pairs'
   Plug 'github/copilot.vim'
   Plug 'APZelos/blamer.nvim'
+  Plug 'numToStr/Comment.nvim'
+  Plug 'kien/rainbow_parentheses.vim'
+
+  "ColorSchemes
+  Plug 'https://github.com/morhetz/gruvbox'
+  Plug 'Everblush/everblush.vim'
 call plug#end()
 
 " Maps
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFocus<CR>
-nnoremap <C-n> :NvimTreeToggle<CR>
+
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 
 colorscheme gruvbox
-let g:gruvbox_constrast_dark = 1
-let g:gruvbox_transparent_bg = 1
+" colorscheme everblush
+" let g:gruvbox_constrast_dark = 1
+" let g:gruvbox_transparent_bg = 1
+" This line make the terminal transparent on windows terminal
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
-set bg=dark
+" set bg=dark
 
 let g:blamer_show_in_insert_modes = 0
+
+" Comment pluggin
+lua require('Comment').setup()
