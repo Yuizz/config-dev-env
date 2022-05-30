@@ -33,6 +33,9 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'APZelos/blamer.nvim'
   Plug 'numToStr/Comment.nvim'
   Plug 'kien/rainbow_parentheses.vim'
+  Plug 'yuezk/vim-js'
+  Plug 'maxmellon/vim-jsx-pretty'
+  Plug 'Yggdroot/indentLine'
 
   "ColorSchemes
   Plug 'https://github.com/morhetz/gruvbox'
