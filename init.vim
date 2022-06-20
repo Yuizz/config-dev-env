@@ -31,17 +31,29 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'jiangmiao/auto-pairs'
   Plug 'github/copilot.vim'
   Plug 'APZelos/blamer.nvim'
-  Plug 'numToStr/Comment.nvim'
   Plug 'kien/rainbow_parentheses.vim'
   Plug 'yuezk/vim-js'
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'Yggdroot/indentLine'
+  Plug 'vim-scripts/ShowPairs'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+  Plug 'tpope/vim-commentary'
+  Plug 'suy/vim-context-commentstring'
+  Plug 'mxw/vim-jsx'
+  Plug 'pangloss/vim-javascript'
+  " Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['php', ] }
+  Plug 'prettier/vim-prettier'
 
   "ColorSchemes
   Plug 'https://github.com/morhetz/gruvbox'
   Plug 'Everblush/everblush.vim'
 call plug#end()
 
+autocmd BufWritePre *.php PrettierAsync
+autocmd BufWritePre *.jsx PrettierAsync
+autocmd BufWritePre *.js PrettierAsync
+autocmd BufWritePre *.css PrettierAsync
 " Maps
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFocus<CR>
@@ -61,5 +73,3 @@ autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 
 let g:blamer_show_in_insert_modes = 0
 
-" Comment pluggin
-lua require('Comment').setup()
