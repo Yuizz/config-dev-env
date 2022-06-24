@@ -54,6 +54,11 @@ autocmd BufWritePre *.php PrettierAsync
 autocmd BufWritePre *.jsx PrettierAsync
 autocmd BufWritePre *.js PrettierAsync
 autocmd BufWritePre *.css PrettierAsync
+
+au VimEnter *  NERDTree
+let NERDTreeQuitOnOpen = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 " Maps
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFocus<CR>
