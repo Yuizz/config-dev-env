@@ -33,16 +33,13 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'APZelos/blamer.nvim'
   Plug 'kien/rainbow_parentheses.vim'
   Plug 'yuezk/vim-js'
-  Plug 'maxmellon/vim-jsx-pretty'
   Plug 'Yggdroot/indentLine'
   Plug 'vim-scripts/ShowPairs'
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
   Plug 'tpope/vim-commentary'
   Plug 'suy/vim-context-commentstring'
   Plug 'mxw/vim-jsx'
   Plug 'pangloss/vim-javascript'
-  " Plug 'prettier/vim-prettier', { 'do': 'npm install', 'for': ['php', ] }
   Plug 'prettier/vim-prettier'
 
   "ColorSchemes
