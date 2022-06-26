@@ -17,6 +17,7 @@ set noshowmode
 set hlsearch
 set incsearch
 set ignorecase
+set termguicolors
 
 highlight Normal ctermbg=NONE
 call plug#begin(stdpath('data') . '/plugged')
@@ -35,16 +36,20 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'yuezk/vim-js'
   Plug 'Yggdroot/indentLine'
   Plug 'vim-scripts/ShowPairs'
+  Plug 'tpope/vim-surround'
 
   Plug 'tpope/vim-commentary'
   Plug 'suy/vim-context-commentstring'
   Plug 'mxw/vim-jsx'
   Plug 'pangloss/vim-javascript'
   Plug 'prettier/vim-prettier'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
   "ColorSchemes
   Plug 'https://github.com/morhetz/gruvbox'
-  Plug 'Everblush/everblush.vim'
+  Plug 'savq/melange'
+  Plug 'Shatur/neovim-ayu'
+  Plug 'luisiacc/gruvbox-baby'
 call plug#end()
 
 autocmd BufWritePre *.php PrettierAsync
@@ -53,9 +58,9 @@ autocmd BufWritePre *.js PrettierAsync
 autocmd BufWritePre *.css PrettierAsync
 
 au VimEnter *  NERDTree
-let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+
 " Maps
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFocus<CR>
@@ -65,13 +70,10 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 
-colorscheme gruvbox
-" colorscheme everblush
-" let g:gruvbox_constrast_dark = 1
-" let g:gruvbox_transparent_bg = 1
+colorscheme gruvbox-baby
+" colorscheme melange
+" colorscheme ayu-mirage
 " This line make the terminal transparent on windows terminal
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
-" set bg=dark
 
 let g:blamer_show_in_insert_modes = 0
-
