@@ -1,6 +1,6 @@
 syntax on
 set mouse=a
-set number
+set nu rnu
 set numberwidth=1
 set clipboard=unnamed
 set showcmd
@@ -9,7 +9,6 @@ set cursorline
 set encoding=utf-8
 set showmatch
 set sw=2
-set relativenumber
 set tabstop=2 shiftwidth=2
 set expandtab
 set laststatus=2
@@ -20,6 +19,7 @@ set ignorecase
 set termguicolors
 
 highlight Normal ctermbg=NONE
+
 call plug#begin(stdpath('data') . '/plugged')
   Plug 'mfussenegger/nvim-lint'
   Plug 'vim-airline/vim-airline'
@@ -71,8 +71,6 @@ nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 
 colorscheme gruvbox-baby
-" colorscheme melange
-" colorscheme ayu-mirage
 " This line make the terminal transparent on windows terminal
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 
