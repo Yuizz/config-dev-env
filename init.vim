@@ -16,7 +16,10 @@ set noshowmode
 set hlsearch
 set incsearch
 set ignorecase
-set termguicolors
+set background=dark
+if has('termguicolors')
+  set termguicolors
+endif
 
 highlight Normal ctermbg=NONE
 
@@ -46,17 +49,19 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
   "ColorSchemes
-  Plug 'https://github.com/morhetz/gruvbox'
   Plug 'savq/melange'
   Plug 'Shatur/neovim-ayu'
   Plug 'luisiacc/gruvbox-baby'
+  Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
 autocmd BufWritePre *.php PrettierAsync
 autocmd BufWritePre *.jsx PrettierAsync
 autocmd BufWritePre *.js PrettierAsync
 autocmd BufWritePre *.css PrettierAsync
+autocmd BufWritePre *.html PrettierAsync
 
+" NERDTree
 au VimEnter *  NERDTree
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
@@ -65,13 +70,13 @@ let NERDTreeDirArrows = 1
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFocus<CR>
 
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
+" Colorscheme
+let g:gruvbox_material_better_performance = 1
+let g:airline_theme = 'gruvbox_material'
+colorscheme gruvbox-material
 
-colorscheme gruvbox-baby
 " This line make the terminal transparent on windows terminal
-autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
+" autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 
 let g:blamer_show_in_insert_modes = 0
+
