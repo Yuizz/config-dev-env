@@ -27,6 +27,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'mfussenegger/nvim-lint'
   Plug 'vim-airline/vim-airline'
   Plug 'preservim/nerdtree'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'ryanoasis/vim-devicons'
   Plug 'mhinz/vim-signify'
   Plug 'ap/vim-css-color'
