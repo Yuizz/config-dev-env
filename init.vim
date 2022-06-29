@@ -48,6 +48,14 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'pangloss/vim-javascript'
   Plug 'prettier/vim-prettier'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  
+  " Autocomplette
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/cmp-cmdline'
+  Plug 'hrsh7th/nvim-cmp'
 
   "ColorSchemes
   Plug 'savq/melange'
@@ -55,7 +63,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'luisiacc/gruvbox-baby'
   Plug 'sainnhe/gruvbox-material'
 call plug#end()
-
+set completeopt=menu,menuone,noselect
 autocmd BufWritePre *.php PrettierAsync
 autocmd BufWritePre *.jsx PrettierAsync
 autocmd BufWritePre *.js PrettierAsync
@@ -70,7 +78,14 @@ let NERDTreeDirArrows = 1
 " Maps
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFocus<CR>
-
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+" For local replace
+nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
+" For global replace
+nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 " Colorscheme
 let g:gruvbox_material_better_performance = 1
 let g:airline_theme = 'gruvbox_material'
