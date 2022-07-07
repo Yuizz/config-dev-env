@@ -92,7 +92,7 @@ let g:airline_theme = 'gruvbox_material'
 colorscheme gruvbox-material
 
 " This line make the terminal transparent on windows terminal
-" autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
+autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 
 let g:blamer_show_in_insert_modes = 0
 
