@@ -17,9 +17,9 @@ set hlsearch
 set incsearch
 set ignorecase
 set background=dark
-if has('termguicolors')
-  set termguicolors
-endif
+" if has('termguicolors')
+"   set termguicolors
+" endif
 
 highlight Normal ctermbg=NONE
 
@@ -62,6 +62,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'Shatur/neovim-ayu'
   Plug 'luisiacc/gruvbox-baby'
   Plug 'sainnhe/gruvbox-material'
+  Plug 'rafi/awesome-vim-colorschemes'
 call plug#end()
 set completeopt=menu,menuone,noselect
 autocmd BufWritePre *.php PrettierAsync
@@ -86,10 +87,13 @@ nnoremap <C-Right> :tabnext<CR>
 nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
 " For global replace
 nnoremap gR gD:%s/<C-R>///gc<left><left><left>
+
+
 " Colorscheme
-let g:gruvbox_material_better_performance = 1
+" let g:gruvbox_material_better_performance = 1
 let g:airline_theme = 'gruvbox_material'
-colorscheme gruvbox-material
+" colorscheme gruvbox-baby
+colorscheme sunbather
 
 " This line make the terminal transparent on windows terminal
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
