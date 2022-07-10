@@ -45,10 +45,17 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'tpope/vim-commentary'
   Plug 'suy/vim-context-commentstring'
   Plug 'mxw/vim-jsx'
+  Plug 'ianks/vim-tsx'
   Plug 'pangloss/vim-javascript'
   Plug 'prettier/vim-prettier'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   
+  Plug 'pangloss/vim-javascript'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'peitalin/vim-jsx-typescript'
+  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+  Plug 'jparise/vim-graphql'
+
   " Autocomplette
   Plug 'neovim/nvim-lspconfig'
   Plug 'hrsh7th/cmp-nvim-lsp'
@@ -67,6 +74,7 @@ call plug#end()
 set completeopt=menu,menuone,noselect
 autocmd BufWritePre *.php PrettierAsync
 autocmd BufWritePre *.jsx PrettierAsync
+autocmd BufWritePre *.tsx PrettierAsync
 autocmd BufWritePre *.js PrettierAsync
 autocmd BufWritePre *.css PrettierAsync
 autocmd BufWritePre *.html PrettierAsync
@@ -100,3 +108,5 @@ autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
 
 let g:blamer_show_in_insert_modes = 0
 
+" CoC extensions
+let g:coc_global_extensions = ['coc-tsserver', 'coc-prettier', 'coc-phpls', 'coc-html']
