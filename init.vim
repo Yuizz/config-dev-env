@@ -100,8 +100,8 @@ nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 " Colorscheme
 " let g:gruvbox_material_better_performance = 1
 let g:airline_theme = 'gruvbox_material'
-" colorscheme gruvbox-baby
-colorscheme sunbather
+colorscheme gruvbox
+" colorscheme sunbather
 
 " This line make the terminal transparent on windows terminal
 autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE
