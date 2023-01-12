@@ -1,0 +1,4 @@
+- Neovim
+- Oh my zsh
+  - power10k: https://github.com/romkatv/powerlevel10k
+  - Nerd font: https://github.com/ryanoasis/nerd-fonts/tree/master
