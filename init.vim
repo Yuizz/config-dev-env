@@ -54,6 +54,7 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'peitalin/vim-jsx-typescript'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
   Plug 'jparise/vim-graphql'
+  Plug 'maxmellon/vim-jsx-pretty'
 
   " Autocomplette
   Plug 'neovim/nvim-lspconfig'
@@ -99,7 +100,7 @@ nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 " Colorscheme
 " let g:gruvbox_material_better_performance = 1
 let g:airline_theme = 'gruvbox_material'
-colorscheme gruvbox
+colorscheme gruvbox-baby
 " colorscheme sunbather
 
 " This line make the terminal transparent on windows terminal
