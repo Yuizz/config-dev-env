@@ -34,7 +34,6 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'neoclide/coc.nvim'
   Plug 'alvan/vim-closetag'
   Plug 'jiangmiao/auto-pairs'
-  Plug 'github/copilot.vim'
   Plug 'APZelos/blamer.nvim'
   Plug 'kien/rainbow_parentheses.vim'
   Plug 'yuezk/vim-js'
